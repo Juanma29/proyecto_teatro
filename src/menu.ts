@@ -40,19 +40,25 @@ export async function gestionarOpcion(
         await rlp.questionAsync('');    
     }
     else if(opcion === '5') {
-        console.log('Opción 5');    
+        console.log('Opción 5');
+        await teatro.cancelarLocalidad(rlp);
+        await rlp.questionAsync('');  
     }
     else if(opcion === '6') {
-        console.log('Opción 6');    
+        console.log('Opción 6');
+        await teatro.consultarLocalidad(rlp);
+        await rlp.questionAsync('');  
     }
     else if(opcion === '7') {
-        console.log('Opción 7');    
+        console.log('Opción 7');
+        await teatro.calcularRecaudacion();
+        await rlp.questionAsync('');   
     }
     else if(opcion === '8') {
         console.log('Opción 8');    
     }
     // el bloque de código de else solamente se ejecuta cuando todos los anteriores else if no se cumple, ni tampoco el primer if
     else { 
-        console.log('Opción inválida');    
+        console.log('Opción inválida');
     }
 }
